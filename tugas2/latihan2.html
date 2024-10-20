@@ -1,0 +1,68 @@
+<dl:TERMINOLOGY xmlns:dl="http://ropianto.uis.ac.id/xml/dlm/" name="modern-team" logic="http://ropianto.uis.ac.id/xml/dlm/logic/dtd/fl.dtd">
+  <dl:CPRIM>
+    <dl:CATOM>Human</dl:CATOM>
+    <dl:CATOM>Anything</dl:CATOM>
+  </dl:CPRIM>
+	<dl:CPRIM>
+    <dl:CATOM>Man</dl:CATOM>
+    <dl:CATOM>Human</dl:CATOM>
+  </dl:CPRIM>
+	<dl:CPRIM>
+    <dl:CATOM>Woman</dl:CATOM>
+    <dl:CATOM>Human</dl:CATOM>
+  </dl:CPRIM>
+	<dl:CEXCL>
+    <dl:CATOM>Woman</dl:CATOM>
+    <dl:CATOM>Man</dl:CATOM>
+  </dl:CEXCL>
+	<dl:CPRIM>
+    <dl:CATOM>Set</dl:CATOM>
+    <dl:CATOM>Anything</dl:CATOM>
+  </dl:CPRIM>
+	<dl:RPRIM>
+    <dl:RATOM>member</dl:RATOM>
+    <dl:RATOM>anyrelation</dl:RATOM>
+  </dl:RPRIM>
+	<dl:RPRIM>
+    <dl:RATOM>leader</dl:RATOM>
+    <dl:RATOM>anyrelation</dl:RATOM>
+  </dl:RPRIM>
+	<dl:CDEF>
+    <dl:CATOM>Team</dl:CATOM>
+    <dl:AND>
+			<dl:CATOM>Set</dl:CATOM>
+			<dl:ALL>
+				<dl:RATOM>member</dl:RATOM>
+				<dl:CATOM>Human</dl:CATOM>
+			</dl:ALL>
+			<dl:ATLEAST value="2">
+				<dl:RATOM>member</dl:RATOM>
+			</dl:ATLEAST>
+		</dl:AND>
+  </dl:CDEF>
+	<dl:CDEF>
+    <dl:CATOM>SmallTeam</dl:CATOM>
+    <dl:AND>
+			<dl:CATOM>Team</dl:CATOM>
+			<dl:ATMOST value="5">
+				<dl:RATOM>member</dl:RATOM>
+			</dl:ATMOST>
+		</dl:AND>
+  </dl:CDEF>
+	<dl:CDEF>
+    <dl:CATOM>ModernTeam</dl:CATOM>
+    <dl:AND>
+			<dl:CATOM>Team</dl:CATOM>
+			<dl:ATMOST value="3">
+				<dl:RATOM>member</dl:RATOM>
+			</dl:ATMOST>
+			<dl:ALL>
+				<dl:RATOM>leader</dl:RATOM>
+				<dl:CATOM>Woman</dl:CATOM>
+			</dl:ALL>
+			<dl:ATLEAST value="1">
+				<dl:RATOM>leader</dl:RATOM>
+			</dl:ATLEAST>
+		</dl:AND>
+  </dl:CDEF>
+</dl:TERMINOLOGY>
